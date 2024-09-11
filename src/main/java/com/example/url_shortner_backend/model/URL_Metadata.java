@@ -1,6 +1,7 @@
 package com.example.url_shortner_backend.model;
 
 import lombok.*;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Repository;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Repository;
 @NoArgsConstructor
 public class URL_Metadata {
 
+    @Id
+    private ObjectId id;
     private String tinyURL;
     private String url;
     private Integer hits;

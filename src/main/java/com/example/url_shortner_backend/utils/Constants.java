@@ -6,7 +6,7 @@ public final class Constants {
 
     }
 
-    public final static String DOMAIN = "http://localhost:8080/";
+    public final static String DOMAIN = "http://localhost:3000/";
     public final static String CHARACTER_POOL = "0123456789abcdefghijklmnopqrstuvwxyz";
 
     //Messages

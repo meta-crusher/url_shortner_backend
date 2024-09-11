@@ -1,5 +1,6 @@
 package com.example.url_shortner_backend.controller;
 
+import com.example.url_shortner_backend.model.CustomizedURL;
 import com.example.url_shortner_backend.model.URL_Metadata;
 import com.example.url_shortner_backend.model.URL_Response;
 import com.example.url_shortner_backend.service.URL_ShortnerService;
@@ -24,8 +25,13 @@ public class URL_MetadataController {
         return urlShortnerService.generateURL(url);
     }
 
+    @PostMapping(value = "/customizeUrl")
+    ResponseEntity<URL_Response> customizeUrl(@RequestBody CustomizedURL url){
+        return urlShortnerService.customizeUrl(url);
+    }
+
     @GetMapping(value = "/{tinyURL}")
-    String redirect(@PathVariable String tinyURL){
+    ResponseEntity<URL_Response> redirect(@PathVariable String tinyURL){
         return urlShortnerService.getURL(DOMAIN + tinyURL);
     }
 
